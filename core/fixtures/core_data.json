@@ -1,0 +1,196 @@
+[
+{
+  "model": "core.category",
+  "pk": 1,
+  "fields": {
+    "name": "شغلانات",
+    "description": ""
+  }
+},
+{
+  "model": "core.category",
+  "pk": 2,
+  "fields": {
+    "name": "حيوانات",
+    "description": ""
+  }
+},
+{
+  "model": "core.category",
+  "pk": 3,
+  "fields": {
+    "name": "افلام",
+    "description": ""
+  }
+},
+{
+  "model": "core.word",
+  "pk": 1,
+  "fields": {
+    "text": "ظابط مرور",
+    "category": 1
+  }
+},
+{
+  "model": "core.word",
+  "pk": 2,
+  "fields": {
+    "text": "نجار",
+    "category": 1
+  }
+},
+{
+  "model": "core.word",
+  "pk": 3,
+  "fields": {
+    "text": "حداد",
+    "category": 1
+  }
+},
+{
+  "model": "core.word",
+  "pk": 4,
+  "fields": {
+    "text": "مدرب جيم",
+    "category": 1
+  }
+},
+{
+  "model": "core.word",
+  "pk": 5,
+  "fields": {
+    "text": "جيمر",
+    "category": 1
+  }
+},
+{
+  "model": "core.word",
+  "pk": 6,
+  "fields": {
+    "text": "باندا",
+    "category": 2
+  }
+},
+{
+  "model": "core.word",
+  "pk": 7,
+  "fields": {
+    "text": "كلب",
+    "category": 2
+  }
+},
+{
+  "model": "core.word",
+  "pk": 8,
+  "fields": {
+    "text": "زرافة",
+    "category": 2
+  }
+},
+{
+  "model": "core.word",
+  "pk": 9,
+  "fields": {
+    "text": "اسد",
+    "category": 2
+  }
+},
+{
+  "model": "core.word",
+  "pk": 10,
+  "fields": {
+    "text": "بطة",
+    "category": 2
+  }
+},
+{
+  "model": "core.word",
+  "pk": 11,
+  "fields": {
+    "text": "وزه",
+    "category": 2
+  }
+},
+{
+  "model": "core.word",
+  "pk": 12,
+  "fields": {
+    "text": "الكسلان",
+    "category": 2
+  }
+},
+{
+  "model": "core.word",
+  "pk": 13,
+  "fields": {
+    "text": "حمار وحشي",
+    "category": 2
+  }
+},
+{
+  "model": "core.word",
+  "pk": 14,
+  "fields": {
+    "text": "سيب و انا اسيب",
+    "category": 3
+  }
+},
+{
+  "model": "core.word",
+  "pk": 15,
+  "fields": {
+    "text": "رمضان مبروك ابو العالمين حموده",
+    "category": 3
+  }
+},
+{
+  "model": "core.word",
+  "pk": 16,
+  "fields": {
+    "text": "حصان",
+    "category": 2
+  }
+},
+{
+  "model": "core.suggestedword",
+  "pk": 1,
+  "fields": {
+    "text": "نمر",
+    "category": 2,
+    "is_approved": true
+  }
+},
+{
+  "model": "core.suggestedword",
+  "pk": 2,
+  "fields": {
+    "text": "حصان",
+    "category": 2,
+    "is_approved": true
+  }
+},
+{
+  "model": "core.difficultylevel",
+  "pk": 1,
+  "fields": {
+    "name": "easy",
+    "time_limit": 120
+  }
+},
+{
+  "model": "core.difficultylevel",
+  "pk": 2,
+  "fields": {
+    "name": "medium",
+    "time_limit": 60
+  }
+},
+{
+  "model": "core.difficultylevel",
+  "pk": 3,
+  "fields": {
+    "name": "hard",
+    "time_limit": 30
+  }
+}
+]
