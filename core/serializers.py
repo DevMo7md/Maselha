@@ -23,3 +23,10 @@ class DifficultyLevelSerializer(serializers.ModelSerializer):
     class Meta:
         model = DifficultyLevel
         fields = '__all__'
+
+class CategoryQuerySerializer(serializers.Serializer):
+
+    categories_id = serializers.ListField(
+        child=serializers.IntegerField(), 
+        required=False
+    )

@@ -1,33 +1,32 @@
 from .models import Word, SuggestedWord, Category, DifficultyLevel
 from .services.GetRandomWord import get_random_word
 from rest_framework.views import APIView, Response
-from .serializers import WordSerializer, SuggestedWordSerializer, CategorySerializer, DifficultyLevelSerializer
+from .serializers import WordSerializer, SuggestedWordSerializer, CategorySerializer, DifficultyLevelSerializer, CategoryQuerySerializer
 from rest_framework import status
 from rest_framework.permissions import AllowAny, IsAdminUser
 # Create your views here.
 
 class RandomWordView(APIView):
     def get(self, request):
-    
-        word = get_random_word()
-        if word:
-            serializer = WordSerializer(word)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        else:
-            return Response({"message": "No words available."}, status=status.HTTP_404_NOT_FOUND)
 
-class RandomWordByCategoryView(APIView):
-    def get(self, request, category_id):
-        word = get_random_word(category_id=category_id)
-        if word:
-            serializer = WordSerializer(word)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        else:
-            return Response({"message": "No words available in this category."}, status=status.HTTP_404_NOT_FOUND)
+        serializer = CategoryQuerySerializer(data=request.query_params)
+
+        if serializer.is_valid():
+            categories_id = serializer.validated_data.get('categories_id', None)
+        
+            word = get_random_word(categories_id=categories_id)
+            print(f"Random word: {word}")  # Debugging line to check the returned word
+
+            if word:
+                return Response(WordSerializer(word).data, status=status.HTTP_200_OK)
+            
+        return Response({"message": "No words available."}, status=status.HTTP_404_NOT_FOUND)
+
 
 class AddSuggestedWordView(APIView):
     permission_classes = [AllowAny]
     def post(self, request):
+        
         serializer = SuggestedWordSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
